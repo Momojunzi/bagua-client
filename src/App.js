@@ -12,6 +12,12 @@ import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
   render() {
+
+    const appStyle = {
+      textAlign: 'center',
+      fontSize: "120%"
+    }
+
     return (
       <StyleRoot>
       <div className="App">

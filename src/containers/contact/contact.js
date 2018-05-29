@@ -38,11 +38,16 @@ class Contact extends Component {
 
   render(){
     const formStyle = {
-      fontFamily:"'Raleway', sans-serif"
+      fontFamily:"'Raleway', sans-serif",
+      fontSize: "120%"
     }
 
     const formTitleStyle = {
-      fontFamily: "'Cabin', sans-serif"
+      fontFamily: "'Cabin', sans-serif",
+      fontSize: '120%'
+    }
+    const inputStyle = {
+      fontSize: "120%"
     }
 
     return(
@@ -50,15 +55,28 @@ class Contact extends Component {
         <form className="col-10 col-md-6" id="emailForm">
           <div className="form-group text-left">
             <label for="emailInput" style={formTitleStyle}>Email address</label>
-            <input type="email" className="form-control" id="emailInput" placeholder="name@example.com" onChange={this.getEmail}/>
+            <input type="email"
+                   className="form-control"
+                   id="emailInput"
+                   placeholder="name@example.com"
+                   onChange={this.getEmail}
+                   style={inputStyle}/>
           </div>
           <div className="form-group text-left">
             <label for="subjectInput" style={formTitleStyle}>Subject</label>
-            <input type="text" className="form-control" id="subjectInput" placeholder="subject..." onChange={this.getEmail}/>
+            <input type="text"
+                   className="form-control"
+                   id="subjectInput"
+                   placeholder="subject..."
+                   onChange={this.getEmail}
+                   style={inputStyle}/>
           </div>
           <div className="form-group text-left">
             <label for="messageInput" style={formTitleStyle}>Message</label>
-            <textarea className="form-control" id="messageInput" rows="3" style={{height: "25vh"}} onChange={this.getEmail}></textarea>
+            <textarea className="form-control"
+                      id="messageInput"
+                      rows="3"
+                      style={{...inputStyle, height: "25vh"}} onChange={this.getEmail}></textarea>
           </div>
           <div className="form-group text-left">
             <button className="btn btn-danger col-6 col-md-4" style={formTitleStyle} onClick={this.sendemail}>Contact us</button>

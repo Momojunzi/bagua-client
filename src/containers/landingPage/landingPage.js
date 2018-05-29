@@ -32,17 +32,22 @@ class Landing extends Component {
   render(){
     let state = this.state;
     const enterBtn ={
-      marginTop: '8vh'
+      marginTop: '8vh',
+      fontSize: '120%'
     }
 
     const landingStyle = {
+      '@media (min-width: 768px)': {
+        paddingTop: '8vh'
+      },
       '@media (max-width: 767px) and (orientation: portrait)':{
         paddingTop: '10vh'
       },
 
       '@media (max-width: 767px) and (orientation: landscape)': {
         paddingTop: '10vh'
-      }
+      },
+      fonstSize: "120%"
     }
     return(
       <div className="container" style={landingStyle}>

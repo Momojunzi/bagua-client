@@ -6,8 +6,10 @@ const BaguaImage = (props) => {
 
   let imageDivStyle={
     minHeight: "10vh",
+    fontSize: "120%"
   }
   const imgStyle = {
+    fontSize: "120%",
     width: "100%",
     maxWidth: "80%"
   }

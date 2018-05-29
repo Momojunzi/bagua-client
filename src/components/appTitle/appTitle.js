@@ -11,6 +11,7 @@ class AppTitle extends Component {
       {name: "contact", address:"/contact"}
     ];
     const titleStyle = {
+      fontSize:'120%',
       maxWidth: "98%",
       padding: "2vh 2vw 2vh",
       marginBottom: "10vh",
@@ -31,6 +32,7 @@ class AppTitle extends Component {
     const homeLink = {
       textDecoration: "none",
       color: "#e34",
+      fonstSize:'120%'
 
     }
     const linkStyle = {
@@ -43,6 +45,9 @@ class AppTitle extends Component {
         marginBottom: '20vh'
       }
     }
+    const bgStyle = {
+      fontSize:"200%"
+    }
     const linksList = links.map((link)=>{
         return (<a href={link.address} className="linkStyle" key={link.name}>
                 <p className="tileLink">{link.name}</p>
@@ -53,7 +58,7 @@ class AppTitle extends Component {
       <div className="container-fluid" style={titleStyle}>
         <div className="row justify-content-between">
           <div className="row col-12 col-md-2" style={tDivStyle}>
-            <a href="/" style={homeLink}><h3>Baguazhang</h3></a>
+            <a href="/" style={homeLink}><h2 style={bgStyle}>Baguazhang</h2></a>
           </div>
           <div className="row col-12 col-md-6 justify-content-around" style={linkDivStyle}>{linksList}</div>
         </div>

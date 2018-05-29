@@ -52,6 +52,7 @@ class HistoryPage extends Component {
 
   render(){
     const cardStyle = {
+      fontSize:"120%",
       padding: ".25%",
       width: "70%",
       minHeight: "40vh",
