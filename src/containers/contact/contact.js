@@ -16,7 +16,11 @@ class Contact extends Component {
     const email = this.state.email;
     console.log(email);
     axios.post('http://35.232.48.52:3001/api/email', email )
-      .then(result => console.log(result))
+      .then(result => {
+        console.log(result)
+        const emailForm = document.getElementById('emailForm');
+        emailForm.reset();
+      })
       .catch(err => console.log(err))
   }
 
@@ -43,7 +47,7 @@ class Contact extends Component {
 
     return(
       <div className="row justify-content-center" style={formStyle}>
-        <form className="col-10 col-md-6">
+        <form className="col-10 col-md-6" id="emailForm">
           <div className="form-group text-left">
             <label for="emailInput" style={formTitleStyle}>Email address</label>
             <input type="email" className="form-control" id="emailInput" placeholder="name@example.com" onChange={this.getEmail}/>
