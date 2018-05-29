@@ -15,7 +15,7 @@ class Contact extends Component {
     event.preventDefault();
     const email = this.state.email;
     console.log(email);
-    axios.post('http://localhost:3001/api/email', email )
+    axios.post('http://35.232.48.52:3001/api/email', email )
       .then(result => console.log(result))
       .catch(err => console.log(err))
   }
