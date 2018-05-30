@@ -18,15 +18,20 @@ class HistoryPage extends Component {
   }
 
   watchScroll = () => {
-    const cth = document.getElementById('cth').offsetTop;
-    const cthHeight = document.getElementById('cth').offsetHeight
-    const lzp = document.getElementById('lzp').offsetTop;
-    const lzpHeight = document.getElementById('lzp').offsetHeight
+    const cth = document.getElementById('cth')
+    const lzp = document.getElementById('lzp')
     window.addEventListener("scroll", ()=>{
       let sctop = document.documentElement.scrollTop;
-      if(sctop >=(cth - cthHeight)) this.delayOpacity("opacity2")
-      if(sctop >=(lzp - lzpHeight)) this.delayOpacity("opacity3")
+      if(this.isAboveBottom(cth)) this.delayOpacity('opacity2')
+      if(this.isAboveBottom(lzp)) this.delayOpacity('opacity3')
     })
+  }
+
+  isAboveBottom = (elem) =>{
+    const bounding = elem.getBoundingClientRect();
+    return (
+      bounding.top <= (window.innerHeight || document.documentElement.clientHeight)
+    )
   }
 
   delayOpacity = (opacityVal) => {
@@ -80,6 +85,12 @@ class HistoryPage extends Component {
       },
     }
 
+    const histDivStyle = {
+      '@media (max-width: 767px)': {
+        paddingTop: '3vh'
+      }
+    }
+
     const historyDiv = historyData.map((data)=>{
       let marginL;
       const opc = this.state[data.opacity];
@@ -103,7 +114,7 @@ class HistoryPage extends Component {
     })
 
     return(
-      <div>{historyDiv}</div>
+      <div style={histDivStyle}>{historyDiv}</div>
     )
   }
 }

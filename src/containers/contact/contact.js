@@ -39,7 +39,10 @@ class Contact extends Component {
   render(){
     const formStyle = {
       fontFamily:"'Raleway', sans-serif",
-      fontSize: "120%"
+      fontSize: "120%",
+      '@media (max-width: 767px)': {
+        marginTop: '15vh'
+      }
     }
 
     const formTitleStyle = {
