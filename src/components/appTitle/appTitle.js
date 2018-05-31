@@ -26,7 +26,10 @@ class AppTitle extends Component {
     };
 
     const tDivStyle = {
-      '@meda (min-width: 768px)': {
+      '@media (max-width: 767px) and (orientation: landscape)': {
+        marginLeft: '14%'
+      },
+      '@media (min-width: 768px)': {
         marginLeft: '2vw'
       }
 
@@ -35,7 +38,10 @@ class AppTitle extends Component {
     const homeLink = {
       textDecoration: "none",
       color: "#e34",
-      fonstSize:'120%'
+      fonstSize:'120%',
+      '@media (max-width: 370px)':{
+        fontSize: '100%'
+      }
 
     }
     const linkStyle = {
@@ -60,7 +66,7 @@ class AppTitle extends Component {
 
       <div className="container-fluid" style={titleStyle}>
         <div className="row justify-content-between">
-          <div className="row col-10 offset-2 col-md-2 offset-md-0" style={tDivStyle}>
+          <div className="row col-10 offset-1 col-md-2 offset-md-0" style={tDivStyle}>
             <a href="/" style={homeLink}><h2 style={bgStyle}>Baguazhang</h2></a>
           </div>
           <div className="row col-10 offset-1 col-md-6 offset-md-0 justify-content-around" style={linkDivStyle}>{linksList}</div>

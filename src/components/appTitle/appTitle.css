@@ -3,10 +3,17 @@
   font-family: 'Raleway', sans-serif;
   font-size: 120%;
   color: black;
+
 }
 
 .linkStyle:hover {
   color:#e34;
   text-decoration: none;
   font-weight: bold;
+}
+
+@media (max-width: 370px) {
+  .linkStyle {
+    font-size: 100%
+  }
 }
