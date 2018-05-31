@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "gsap": "^2.0.1",
     "nodemailer": "^4.6.5",
     "popmotion": "^8.2.2",
     "radium": "^0.24.0",

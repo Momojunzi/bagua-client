@@ -26,7 +26,10 @@ class AppTitle extends Component {
     };
 
     const tDivStyle = {
-      marginLeft: '2vw'
+      '@meda (min-width: 768px)': {
+        marginLeft: '2vw'
+      }
+
     }
 
     const homeLink = {
@@ -57,10 +60,10 @@ class AppTitle extends Component {
 
       <div className="container-fluid" style={titleStyle}>
         <div className="row justify-content-between">
-          <div className="row col-12 col-md-2" style={tDivStyle}>
+          <div className="row col-10 offset-2 col-md-2 offset-md-0" style={tDivStyle}>
             <a href="/" style={homeLink}><h2 style={bgStyle}>Baguazhang</h2></a>
           </div>
-          <div className="row col-12 col-md-6 justify-content-around" style={linkDivStyle}>{linksList}</div>
+          <div className="row col-10 offset-1 col-md-6 offset-md-0 justify-content-around" style={linkDivStyle}>{linksList}</div>
         </div>
       </div>
 

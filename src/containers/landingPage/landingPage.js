@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import BaguaImage from '../../components/baguaImage/baguaImage';
 import Radium from 'radium';
+import {TweenMax, Linear} from 'gsap/TweenMax';
 
 class Landing extends Component {
   state = {
@@ -10,7 +11,9 @@ class Landing extends Component {
   }
 
   componentDidMount(){
-    this.rotationFunc();
+    console.log(TweenMax)
+    //this.rotationFunc();
+    this.rotation();
   }
 
   rotationFunc = () => {
@@ -27,6 +30,11 @@ class Landing extends Component {
         })
       })
     }, 60)
+  }
+
+  rotation = () => {
+    const rotDiv = document.getElementById('rotDiv');
+    TweenMax.to(rotDiv, 10, {rotation:360, repeat:-1, ease: Linear.easeNone})
   }
 
   render(){
