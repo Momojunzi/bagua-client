@@ -1,12 +1,14 @@
-FROM node:carbon
+FROM node:9.6.1
 
-WORKDIR /usr/src/aapp
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
 
-COPY package*.json ./
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+COPY package.json /usr/src/app/package.json
 
 RUN npm install
-
-COPY . .
+RUN npm install react-scripts@1.1.1 -g --silent
 
 EXPOSE 3000
 CMD ["npm", "start"]
